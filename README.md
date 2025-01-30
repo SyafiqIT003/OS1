@@ -348,8 +348,10 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 
 ***Questions:***
 
-1. Are files in the container persistent. Why not?. ***(1 mark)*** __Fill answer here__.
-2. Can we run two, or three instances of debian linux? . ***(1 mark)*** __Fill answer here__.
+1. Are files in the container persistent. Why not?. ***(1 mark)*** 
+__No. This is because the container are ephemeral (lasts only for a short time). All of the container's data, including created files, is erased when a container is destroyed with docker rm__.
+2. Can we run two, or three instances of debian linux? . ***(1 mark)*** 
+__It is possible to run more than one instance of Debian Linux. Docker enables you to build and run multiple containers using the same or different images. You can run many instances of Debian simultaneously since each container runs in a separate, isolated environment__.
 
 ## Running your own container with persistent storage
 
@@ -368,14 +370,28 @@ At the terminal, create a new directory called **myroot**, and run a instance of
 
 ***Questions:***
 
-1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)*** __Fill answer here__.
+1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)*** 
+__It shows total 0 because there is no file currently present in the myroot directory__.
+```bash
+@nurdanish22 ➜ /workspaces/OSProject/myroot (main) $ ls -l /workspaces/OSProject/myroot
+total 0
+```
 2. Can you change the permission of the files to user codespace.  You will need this to be able to commit and get points for this question. ***(2 mark)***
 ```bash
 //use sudo and chown
 sudo chown -R codespace:codespace myroot
 
 ```
-*** __Fill answer here__.***
+__Yes, you can change the permission of the files__.
+```bash
+@nurdanish22 ➜ /workspaces/OSProject/myroot (main) $ sudo chown -R codespace:codespace /workspaces/OSProject/myroot
+@nurdanish22 ➜ /workspaces/OSProject/myroot (main) $ ls -l /workspaces/OSProject/myroot
+total 0
+@nurdanish22 ➜ /workspaces/OSProject/myroot (main) $ ls -la /workspaces/OSProject/myroot
+total 8
+drwxrwxrwx+ 2 codespace codespace 4096 Jan 30 15:19 .
+drwxrwxrwx+ 5 codespace root      4096 Jan 30 15:19 ..
+```
 
 ## You are on your own, create your own static webpage
 
