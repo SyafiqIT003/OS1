@@ -418,8 +418,10 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 
 ***Questions:***
 
-1. Are files in the container persistent. Why not?. ***(1 mark)*** __Fill answer here__.
-2. Can we run two, or three instances of debian linux? . ***(1 mark)*** __Fill answer here__.
+1. Are files in the container persistent. Why not?. ***(1 mark)***
+No, container are not persistent because the container filesystem is temporary and gets deleted when the container stops or is removed.To retain data,it nedds to be stored in Docker volume or bind mounts
+2. Can we run two, or three instances of debian linux? . ***(1 mark)*** 
+Yes.Each instances can be run on separate container
 
 ## Running your own container with persistent storage
 
@@ -438,14 +440,36 @@ At the terminal, create a new directory called **myroot**, and run a instance of
 
 ***Questions:***
 
-1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)*** __Fill answer here__.
+1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)*** 
+```bash
+root@69426ccc44b5:/# ls -l
+total 48
+lrwxrwxrwx    1 root root    7 Jan 13 00:00 bin -> usr/bin
+drwxr-xr-x    2 root root 4096 Dec 31 10:25 boot
+drwxr-xr-x    5 root root  360 Feb  1 05:35 dev
+drwxr-xr-x    1 root root 4096 Feb  1 05:35 etc
+drwxr-xr-x    2 root root 4096 Dec 31 10:25 home
+lrwxrwxrwx    1 root root    7 Jan 13 00:00 lib -> usr/lib
+lrwxrwxrwx    1 root root    9 Jan 13 00:00 lib64 -> usr/lib64
+drwxr-xr-x    2 root root 4096 Jan 13 00:00 media
+drwxr-xr-x    2 root root 4096 Jan 13 00:00 mnt
+drwxr-xr-x    2 root root 4096 Jan 13 00:00 opt
+dr-xr-xr-x  222 root root    0 Feb  1 05:35 proc
+drwxr-xr-x+   2 root root 4096 Feb  1 05:40 root
+drwxr-xr-x    3 root root 4096 Jan 13 00:00 run
+lrwxrwxrwx    1 root root    8 Jan 13 00:00 sbin -> usr/sbin
+drwxr-xr-x    2 root root 4096 Jan 13 00:00 srv
+dr-xr-xr-x   12 root root    0 Feb  1 05:35 sys
+drwxrwxrwt    2 root root 4096 Jan 13 00:00 tmp
+drwxr-xr-x   12 root root 4096 Jan 13 00:00 usr
+drwxr-xr-x   11 root root 4096 Jan 13 00:00 var
+```
 2. Can you change the permission of the files to user codespace.  You will need this to be able to commit and get points for this question. ***(2 mark)***
 ```bash
 //use sudo and chown
-sudo chown -R codespace:codespace myroot
-
+@SyafiqIT003 ➜ /workspaces/OS1/myroot (main) $ sudo chown -R codespace:codespace myroot
 ```
-*** __Fill answer here__.***
+Yes, I can.
 
 ## You are on your own, create your own static webpage
 
@@ -471,9 +495,19 @@ docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ 
 
 ***Questions:***
 
-1. What is the permission of folder /usr/local/apache/htdocs and what user and group owns the folder? . ***(2 mark)*** __Fill answer here__.
-2. What port is the apache web server running. ***(1 mark)*** __Fill answer here__.
-3. What port is open for http protocol on the host machine? ***(1 mark)*** __Fill answer here__.
+1. What is the permission of folder /usr/local/apache/htdocs and what user and group owns the folder? . ***(2 mark)*** 
+```bash
+permission: drwxrwxrwx+
+user&group: 1000:1000
+```
+2. What port is the apache web server running. ***(1 mark)*** 
+```bash
+port: 80
+```
+3. What port is open for http protocol on the host machine? ***(1 mark)***
+```bash
+port: 8080
+```
 
 ## Create SUB Networks
 
@@ -492,11 +526,34 @@ docker run -itd --net rednet --name c2 busybox sh
 ```
 ***Questions:***
 
-1. Describe what is busybox and what is command switch **--name** is for? . ***(2 mark)*** __Fill answer here__.
-2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)*** __Fill answer here__.
-3. Using ```docker inspect c1``` and ```docker inspect c2``` inscpect the two network. What is the gateway of bluenet and rednet.? ***(1 mark)*** __Fill answer here__.
-4. What is the network address for the running container c1 and c2? ***(1 mark)*** __Fill answer here__.
-5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)*** __Fill answer here__.
+1. Describe what is busybox and what is command switch **--name** is for? . ***(2 mark)*** 
+BusyBox is a tiny Linux utility suite, useful in lightweight containers.
+The --name switch in Docker allows you to assign a custom name to a container for easier management.
+2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)***
+```bash
+@SyafiqIT003 ➜ /workspaces/OS1 (main) $ docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+30861fa6f7f4   bluenet   bridge    local
+00589eb7af65   bridge    bridge    local
+ef246214baf7   host      host      local
+46e368f72226   none      null      local
+a6dd0dd576b9   rednet    bridge    local
+```
+3. Using ```docker inspect c1``` and ```docker inspect c2``` inscpect the two network. What is the gateway of bluenet and rednet.? ***(1 mark)*** 
+```bash
+"Gateway": "172.18.0.1"  # bluenet
+"Gateway": "172.19.0.1"  # rednet
+```
+4. What is the network address for the running container c1 and c2? ***(1 mark)*** 
+```bash
+Container c1 (bluenet): IP Address: 172.18.0.2
+Container c2 (rednet): IP Address: 172.19.0.2
+```
+5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)***
+```bash
+@SyafiqIT003 ➜ /workspaces/OS1 (main) $ docker exec c1 ping c2
+ping: bad address 'c2'
+```
 
 ## Bridging two SUB Networks
 1. Let's try this again by creating a network to bridge the two containers in the two subnetworks
@@ -508,8 +565,22 @@ docker exec c1 ping c2
 ```
 ***Questions:***
 
-1. Are you able to ping? Show your output . ***(1 mark)*** __Fill answer here__.
-2. What is different from the previous ping in the section above? ***(1 mark)*** __Fill answer here__.
+1. Are you able to ping? Show your output . ***(1 mark)***
+Yes.
+```bash
+PING c2 (172.20.0.3): 56 data bytes
+64 bytes from 172.20.0.3: seq=0 ttl=64 time=0.072 ms
+64 bytes from 172.20.0.3: seq=1 ttl=64 time=0.078 ms
+64 bytes from 172.20.0.3: seq=2 ttl=64 time=0.075 ms
+64 bytes from 172.20.0.3: seq=3 ttl=64 time=0.092 ms
+64 bytes from 172.20.0.3: seq=4 ttl=64 time=0.082 ms
+
+--- c2 ping statistics ---
+5 packets transmitted, 5 packets received, 0% packet loss
+round-trip min/avg/max = 0.072/0.0798/0.092 ms
+```
+2. What is different from the previous ping in the section above? ***(1 mark)*** 
+In the section above, the networks were isolated.By connecting both containers to the bridgenet network, the bluenet and rednet can now communicate with each other,
 
 ## Intermediate Level (10 marks bonus)
 
