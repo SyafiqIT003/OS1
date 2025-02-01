@@ -1,11 +1,11 @@
 # OSProject Running Containers for Application Development
 
-Group Name: __Fill your team name__. 
+Group Name: __Mao Mao__. 
 
-Section: __Fill your class section__. 
+Section: __7__. 
 
 Team Mates:
-1. __Fill name__ and __matric no__
+1. _Mohamad Adlan Syafiq bin Mohd Fauzi__ __(2227229)__
 2. __Fill name__ and __matric no__
 3. __Fill name__ and __matric no__
 
@@ -24,7 +24,7 @@ Team Mates:
 
 ***Questions:***
 
-1. What is the link of the fork OSProject in your repository. ***(1 mark)*** __Fill answer here__.
+1. What is the link of the fork OSProject in your repository. ***(1 mark)*** __https://github.com/SyafiqIT003/OS1__.
 2. How many files and folders are in this repository. ***(1 mark)*** __Fill answer here__.
 
 
@@ -57,9 +57,13 @@ Team Mates:
 
 ***Questions:***
 
-1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** __Fill answer here__.
-2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** __Fill answer here__.
-3. Why must we commit and sync our current work on source control? ***(1 mark)*** __Fill answer here__.
+1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** 
+Linux Ubuntu.
+2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)***
+The two options are : 2-core 8GB RAM . 32GB / 4-core 16GB RAM . 32GB.
+3. Why must we commit and sync our current work on source control? ***(1 mark)***
+ To save our recent changes and allow other people to see recent update for collaboration purpose.
+
 
 ## Exploring the Terminal
 
@@ -76,16 +80,170 @@ codespace
 
 Look at the TERMINAL tab. Run the following commands and provide the output here. 
 
-1. Run the command **pwd** . ***(1 mark)*** __Fill answer here__.
-2. Run the command **cat /etc/passwd** . ***(1 mark)*** __Fill answer here__.
-3. Run the command **df** . ***(1 mark)*** __Fill answer here__.
-4. Run the command **du** . ***(1 mark)*** __Fill answer here__.
-5. Run the command **ls** . ***(1 mark)*** __Fill answer here__.
-6. Run the command **ls -asl** . ***(1 mark)*** __Fill answer here__.
-7. Run the command **free -h** . ***(1 mark)*** __Fill answer here__.
-8. Run the command **cat /proc/cpuinfo** . ***(1 mark)*** __Fill answer here__.
-9. Run the command **top** and type **q** to quit. ***(1 mark)*** __Fill answer here__.
-10. Run the command **uname -a**. ***(1 mark)*** __Fill answer here__.
+1. Run the command **pwd** . ***(1 mark)***
+```bash
+@SyafiqIT003 ➜ /workspaces/OS1 (main) $ pwd
+/workspaces/OS1
+```
+2. Run the command **cat /etc/passwd** . ***(1 mark)***
+```bash
+@SyafiqIT003 ➜ /workspaces/OS1 (main) $ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:101:101:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+systemd-network:x:102:103:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:103:104:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:104:105::/nonexistent:/usr/sbin/nologin
+codespace:x:1000:1000::/home/codespace:/bin/bash
+sshd:x:105:65534::/run/sshd:/usr/sbin/nologin
+
+```
+3. Run the command **df** . ***(1 mark)***
+```bash
+@SyafiqIT003 ➜ /workspaces/OS1 (main) $ df
+Filesystem     1K-blocks     Used Available Use% Mounted on
+overlay         32847680 10706592  20446988  35% /
+tmpfs              65536        0     65536   0% /dev
+shm                65536        0     65536   0% /dev/shm
+/dev/root       30298176 13621700  16660092  45% /vscode
+/dev/sda1       46127956 18743836  25008544  43% /tmp
+/dev/loop4      32847680 10706592  20446988  35% /workspaces
+
+```
+4. Run the command **du** . ***(1 mark)*** 
+```bash
+@SyafiqIT003 ➜ /workspaces/OS1 (main) $ du
+8       ./.git/refs/heads
+4       ./.git/refs/tags
+8       ./.git/refs/remotes/origin
+12      ./.git/refs/remotes
+28      ./.git/refs
+68      ./.git/hooks
+8       ./.git/info
+4       ./.git/lfs/tmp
+8       ./.git/lfs
+4       ./.git/branches
+8       ./.git/objects/74
+8       ./.git/objects/fa
+12      ./.git/objects/af
+8       ./.git/objects/83
+8       ./.git/objects/96
+8       ./.git/objects/c0
+8       ./.git/objects/93
+12      ./.git/objects/17
+8       ./.git/objects/24
+8       ./.git/objects/1b
+8       ./.git/objects/d8
+12      ./.git/objects/14
+12      ./.git/objects/70
+8       ./.git/objects/0b
+8       ./.git/objects/47
+8       ./.git/objects/cd
+12      ./.git/objects/44
+12      ./.git/objects/72
+8       ./.git/objects/e9
+8       ./.git/objects/71
+12      ./.git/objects/64
+16      ./.git/objects/fb
+8       ./.git/objects/a3
+8       ./.git/objects/0d
+8       ./.git/objects/c3
+12      ./.git/objects/2e
+8       ./.git/objects/7b
+8       ./.git/objects/04
+8       ./.git/objects/91
+12      ./.git/objects/62
+12      ./.git/objects/3d
+12      ./.git/objects/1c
+8       ./.git/objects/f6
+8       ./.git/objects/b6
+8       ./.git/objects/4f
+8       ./.git/objects/fe
+4       ./.git/objects/info
+8       ./.git/objects/eb
+8       ./.git/objects/41
+12      ./.git/objects/29
+8       ./.git/objects/e7
+8       ./.git/objects/fc
+8       ./.git/objects/4b
+8       ./.git/objects/b2
+8       ./.git/objects/20
+8       ./.git/objects/ab
+12      ./.git/objects/73
+8       ./.git/objects/52
+8       ./.git/objects/c6
+1828    ./.git/objects/pack
+8       ./.git/objects/86
+12      ./.git/objects/e5
+8       ./.git/objects/58
+8       ./.git/objects/f2
+8       ./.git/objects/a4
+12      ./.git/objects/6e
+8       ./.git/objects/49
+8       ./.git/objects/fd
+8       ./.git/objects/81
+8       ./.git/objects/3f
+8       ./.git/objects/4a
+8       ./.git/objects/a6
+8       ./.git/objects/b9
+8       ./.git/objects/3a
+12      ./.git/objects/ff
+12      ./.git/objects/b5
+12      ./.git/objects/d2
+8       ./.git/objects/60
+8       ./.git/objects/cb
+2452    ./.git/objects
+8       ./.git/logs/refs/heads
+8       ./.git/logs/refs/remotes/origin
+12      ./.git/logs/refs/remotes
+24      ./.git/logs/refs
+32      ./.git/logs
+2628    ./.git
+1972    ./images
+4624    .
+
+```
+5. Run the command **ls** . ***(1 mark)*** 
+```bash
+@SyafiqIT003 ➜ /workspaces/OS1 (main) $ 
+```
+6. Run the command **ls -asl** . ***(1 mark)***
+```bash
+@SyafiqIT003 ➜ /workspaces/OS1 (main) $ 
+```
+7. Run the command **free -h** . ***(1 mark)***
+```bash
+@SyafiqIT003 ➜ /workspaces/OS1 (main) $ 
+```
+8. Run the command **cat /proc/cpuinfo** . ***(1 mark)***
+```bash
+@SyafiqIT003 ➜ /workspaces/OS1 (main) $ 
+```
+9. Run the command **top** and type **q** to quit. ***(1 mark)***
+```bash
+@SyafiqIT003 ➜ /workspaces/OS1 (main) $ 
+```
+10. Run the command **uname -a**. ***(1 mark)***
+```bash
+@SyafiqIT003 ➜ /workspaces/OS1 (main) $ 
+```
 11. What is the available free memory in the system. ***(1 mark)*** __Fill answer here__.
 12. What is the available disk space mounted on /workspace. ***(1 mark)*** __Fill answer here__.
 13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)*** __Fill answer here__.
