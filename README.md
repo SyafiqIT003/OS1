@@ -222,35 +222,143 @@ shm                65536        0     65536   0% /dev/shm
 ```
 5. Run the command **ls** . ***(1 mark)*** 
 ```bash
-@SyafiqIT003 ➜ /workspaces/OS1 (main) $ 
+@SyafiqIT003 ➜ /workspaces/OS1 (main) $ ls
+README.md  images
 ```
 6. Run the command **ls -asl** . ***(1 mark)***
 ```bash
-@SyafiqIT003 ➜ /workspaces/OS1 (main) $ 
+@SyafiqIT003 ➜ /workspaces/OS1 (main) $ ls -asl
+total 40
+ 4 drwxrwxrwx+ 4 codespace root  4096 Jan 31 13:10 .
+ 4 drwxr-xrwx+ 5 codespace root  4096 Jan 31 13:10 ..
+ 4 drwxrwxrwx+ 9 codespace root  4096 Feb  1 02:22 .git
+24 -rw-rw-rw-  1 codespace root 21956 Feb  1 02:24 README.md
+ 4 drwxrwxrwx+ 2 codespace root  4096 Jan 31 13:10 images
+
 ```
 7. Run the command **free -h** . ***(1 mark)***
 ```bash
-@SyafiqIT003 ➜ /workspaces/OS1 (main) $ 
+@SyafiqIT003 ➜ /workspaces/OS1 (main) $ free -h
+              total        used        free      shared  buff/cache   available
+Mem:          7.7Gi       1.5Gi       234Mi        62Mi       6.0Gi       5.9Gi
+Swap:            0B          0B          0B
 ```
 8. Run the command **cat /proc/cpuinfo** . ***(1 mark)***
 ```bash
-@SyafiqIT003 ➜ /workspaces/OS1 (main) $ 
+@SyafiqIT003 ➜ /workspaces/OS1 (main) $cat /proc/cpuinfo
+processor       : 0
+vendor_id       : AuthenticAMD
+cpu family      : 25
+model           : 1
+model name      : AMD EPYC 7763 64-Core Processor
+stepping        : 1
+microcode       : 0xffffffff
+cpu MHz         : 3163.456
+cache size      : 512 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 1
+apicid          : 0
+initial apicid  : 0
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp
+ lm constant_tsc rep_good nopl tsc_reliable nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext invpcid_single vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero xsaveerptr rdpru arat npt nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload umip vaes vpclmulqdq rdpid fsrm                                                                              bugs            : sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass srso
+bogomips        : 4890.85
+TLB size        : 2560 4K pages
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 48 bits physical, 48 bits virtual
+power management:
+
+processor       : 1
+vendor_id       : AuthenticAMD
+cpu family      : 25
+model           : 1
+model name      : AMD EPYC 7763 64-Core Processor
+stepping        : 1
+microcode       : 0xffffffff
+cpu MHz         : 3128.956
+cache size      : 512 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 1
+apicid          : 1
+initial apicid  : 1
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp
+ lm constant_tsc rep_good nopl tsc_reliable nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext invpcid_single vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero xsaveerptr rdpru arat npt nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload umip vaes vpclmulqdq rdpid fsrm                                                                              bugs            : sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass srso
+bogomips        : 4890.85
+TLB size        : 2560 4K pages
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 48 bits physical, 48 bits virtual
+power management:
+
+ 
 ```
 9. Run the command **top** and type **q** to quit. ***(1 mark)***
 ```bash
-@SyafiqIT003 ➜ /workspaces/OS1 (main) $ 
+processor       : 1
+vendor_id       : AuthenticAMD
+cpu family      : 25
+model           : 1
+model name      : AMD EPYC 7763 64-Core Processor
+stepping        : 1
+microcode       : 0xffffffff
+cpu MHz         : 3243.680
+cache size      : 512 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 1
+apicid          : 1
+initial apicid  : 1
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl tsc_reliable nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext invpcid_single vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero xsaveerptr rdpru arat npt nrip_save tsc_scale vmcb_clean flushbyasid dec
+top - 04:46:12 up 3 min,  0 users,  load average: 10.52, 4.43, 1.68
+Tasks:  20 total,   1 running,  19 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 24.1 us, 20.7 sy,  0.0 ni, 37.9 id,  0.0 wa,  0.0 hi, 17.2 si,  0.0 st
+MiB Mem :   7929.6 total,    170.2 free,   1182.3 used,   6577.1 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   6373.2 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                  
+    628 codespa+  20   0   41.5g 307984  50816 S   6.7   3.8   0:07.99 node                                                                                     
+      1 codespa+  20   0    1136    640    640 S   0.0   0.0   0:00.02 docker-init                                                                              
+      7 codespa+  20   0    7236   1792   1792 S   0.0   0.0   0:00.02 sleep                                                                                    
+     35 root      20   0   12196   3352   2432 S   0.0   0.0   0:00.00 sshd                     
 ```
 10. Run the command **uname -a**. ***(1 mark)***
 ```bash
-@SyafiqIT003 ➜ /workspaces/OS1 (main) $ 
+@SyafiqIT003 ➜ /workspaces/OS1 (main) $uname -a
+Linux codespaces-879e6f 6.5.0-1025-azure #26~22.04.1-Ubuntu SMP Thu Jul 11 22:33:04 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+ 
 ```
-11. What is the available free memory in the system. ***(1 mark)*** __Fill answer here__.
-12. What is the available disk space mounted on /workspace. ***(1 mark)*** __Fill answer here__.
-13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)*** __Fill answer here__.
-14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)*** __Fill answer here__.
-15. What is the TLB size of the Virtual CPU. ***(1 mark)*** __Fill answer here__.
-16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** __Fill answer here__.
-17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** __Fill answer here__.
+11. What is the available free memory in the system. ***(1 mark)***
+ 234Mi
+12. What is the available disk space mounted on /workspace. ***(1 mark)***
+ 20446988
+13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)***
+Linux codespaces-879e6f 6.5.0-1025-azure #26~22.04.1-Ubuntu SMP x86_64 x86_64 x86_64 GNU/Linux
+14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)*** 
+ls is used for a simple file list in general.
+ls -asl when you need hidden files, file sizes, and detailed information.
+15. What is the TLB size of the Virtual CPU. ***(1 mark)*** 
+2560 4K pages
+16. What is the CPU speed of the Virtual CPU. ***(1 mark)***
+3163.456
+17. What is the top running process that consumes the most CPU cycles. ***(1 mark)***
+Node with PID 628 (codespace) with 6.7 CPU usage
 
 ## Running your own container instance.
 
